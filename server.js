@@ -5,8 +5,8 @@ const dotenv = require('dotenv').config();
 const PORT = process.env.PORT;
 connectDB();
 app.use(express.json());
-app.use("/api/contacts", require("./routes/contactRoutes"));
 app.use("/api/user", require("./routes/userRoutes"));
+app.use("/api", require("./routes/index"));
 app.use(require("./middleware/errorHandler").errorHandler);
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
